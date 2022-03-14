@@ -1,7 +1,14 @@
-import HotelsPage from './pages/HotelsPage.tsx/HotelsPage';
+import { QueryClientProvider, QueryClient } from 'react-query';
+import HotelsPage from './pages/HotelsPage/HotelsPage';
+
+const queryClient = new QueryClient();
 
 function App() {
-  return <HotelsPage />;
+  return (
+    <QueryClientProvider client={queryClient}>
+      <HotelsPage />
+    </QueryClientProvider>
+  );
 }
 
 export default App;
