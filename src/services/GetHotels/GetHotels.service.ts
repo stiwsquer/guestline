@@ -17,7 +17,6 @@ const useGetHotels = () => {
     refetchOnMount: false,
     refetchOnReconnect: false,
     refetchOnWindowFocus: false,
-    enabled: !!GET_HOTELS_URL,
   });
 
   return {
