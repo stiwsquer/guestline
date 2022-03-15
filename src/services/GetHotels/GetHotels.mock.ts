@@ -1,4 +1,6 @@
-export const mockHotelsApiResponse = [
+import { GetHotelApiResponse, HotelDTO } from './GetHotels.types';
+
+export const mockHotelsApiResponse: GetHotelApiResponse[] = [
   {
     id: 'OBMNG2',
     name: 'OBM Hotel 2',
@@ -63,12 +65,10 @@ export const mockHotelsApiResponse = [
   },
 ];
 
-export const mockHotelsDTO = [
+export const mockHotelsDTO: HotelDTO[] = [
   {
     id: 'OBMNG2',
     name: 'OBM Hotel 2',
-    description:
-      'Fruitcake brownie sugar plum cotton candy pastry marzipan pie lollipop ice cream. Sweet pie tootsie roll oat cake apple pie candy pastry wafer jelly beans. Cake sweet oat cake chocolate sweet chocolate pudding biscuit.',
     address1: '10 Palace Place',
     address2: '',
     starRating: '5',
@@ -82,8 +82,6 @@ export const mockHotelsDTO = [
   {
     id: 'OBMNG3',
     name: 'OBM Hotel 3',
-    description:
-      'Chocolate marzipan muffin danish cake chupa chups pastry. Croissant sweet sweet wafer sweet roll chocolate. Carrot cake pudding tart pastry lemon drops croissant cupcake brownie croissant. Sweet lollipop soufflé tart cookie sweet gingerbread pudding croissant.',
     address1: '10 Carlisle Street',
     address2: '',
     starRating: '3',

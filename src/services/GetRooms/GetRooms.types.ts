@@ -1,5 +1,5 @@
 export interface GetRoomsApiResponse {
-  rooms: Room[];
+  rooms: RoomInterface[];
   ratePlans: RatePlan[];
 }
 
@@ -23,7 +23,7 @@ export interface CancellationPolicy {
   days?: number;
 }
 
-export interface Room {
+export interface RoomInterface {
   id: string;
   name: string;
   shortDescription: string;

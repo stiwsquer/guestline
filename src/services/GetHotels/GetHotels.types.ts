@@ -1,4 +1,4 @@
-export interface GetHotelsApiResponse {
+export interface GetHotelApiResponse {
   id: string;
   name: string;
   description: string;
@@ -17,17 +17,22 @@ export interface GetHotelsApiResponse {
   checkInMinutes: string;
   checkOutHours: string;
   checkOutMinutes: string;
+  position: Position;
 }
 
+export interface Position {
+  latitude: string;
+  longitude: string;
+  timezone: string;
+}
 export interface Image {
   url: string;
   alt: string;
 }
 
-export interface HotelsDTO {
+export interface HotelDTO {
   id: string;
   name: string;
-  description: string;
   address1: string;
   address2: string;
   starRating: string;
