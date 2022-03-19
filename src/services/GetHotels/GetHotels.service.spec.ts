@@ -20,7 +20,7 @@ describe('GetHotels.service', () => {
     });
 
     expect(result.current.isFetching).toBeTruthy();
-    expect(result.current.hotelsData).toStrictEqual(undefined);
+    expect(result.current.hotelsData).toStrictEqual(null);
 
     await waitForNextUpdate();
 

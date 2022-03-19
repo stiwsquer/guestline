@@ -26,7 +26,7 @@ const useGetRooms = (roomId: string) => {
   );
 
   return {
-    roomsData: data,
+    roomsData: data ?? null,
     isFetching,
     error,
   };

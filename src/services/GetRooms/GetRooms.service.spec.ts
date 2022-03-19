@@ -23,7 +23,7 @@ describe('GetRooms.service', () => {
     });
 
     expect(result.current.isFetching).toBeTruthy();
-    expect(result.current.roomsData).toStrictEqual(undefined);
+    expect(result.current.roomsData).toStrictEqual(null);
 
     await waitForNextUpdate();
 
@@ -36,6 +36,6 @@ describe('GetRooms.service', () => {
       wrapper: TestWrapper,
     });
     expect(result.current.isFetching).toBeFalsy();
-    expect(result.current.roomsData).toStrictEqual(undefined);
+    expect(result.current.roomsData).toStrictEqual(null);
   });
 });

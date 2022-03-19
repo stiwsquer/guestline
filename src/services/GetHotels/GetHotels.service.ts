@@ -20,7 +20,7 @@ const useGetHotels = () => {
   });
 
   return {
-    hotelsData: data,
+    hotelsData: data ?? null,
     isFetching,
     error,
   };

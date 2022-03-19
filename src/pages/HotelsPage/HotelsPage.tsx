@@ -8,11 +8,13 @@ const HotelsPage = () => {
   if (isFetching) return <h1>Fetching hotels...</h1>;
 
   return (
-    <>
-      {hotelsData?.map((hotelData) => (
-        <Hotel key={hotelData.id} hotel={hotelData} />
-      ))}
-    </>
+    <div className="min-h-screen font-poppins">
+      <div className="max-w-4xl  m-auto">
+        {hotelsData?.map((hotelData) => (
+          <Hotel key={hotelData.id} hotel={hotelData} />
+        ))}
+      </div>
+    </div>
   );
 };
 
