@@ -10,8 +10,10 @@ import Room from '../Room/Room';
 
 type Props = {
   hotel: HotelDTO;
+  adultsQuantity: number;
+  childrenQuantity: number;
 };
-const Hotel = ({ hotel }: Props) => {
+const Hotel = ({ hotel, adultsQuantity, childrenQuantity }: Props) => {
   const { roomsData, isFetching, error } = useGetRooms(hotel.id);
   const [expand, setExpand] = useState(true);
 
@@ -20,11 +22,11 @@ const Hotel = ({ hotel }: Props) => {
 
   return (
     <article className="w-full my-6 flex flex-col shadow-2xl rounded-lg">
-      <section className="flex flex-row w-full flex-wrap-reverse justify-center relative sm:pb-0 pb-5">
+      <section className="flex md:flex-row w-full flex-col-reverse justify-center relative md:pb-0 pb-6">
         <Slider images={hotel.images} />
-        <div className="flex flex-row justify-between flex-1 basis-80 ">
+        <div className="flex flex-row justify-between flex-1 ">
           <div className="m-4">
-            <h1 className="font-bold text-xl mb-3 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
+            <h1 className="font-bold text-xl mb-3 bg-clip-text text-transparent bg-gradient-to-r from-[#f6d365] to-[#fda085]">
               {hotel.name}
             </h1>
             <h3 className=" text-sm mb-1">{hotel.address1}</h3>
@@ -38,7 +40,7 @@ const Hotel = ({ hotel }: Props) => {
           />
         </div>
         <button
-          className="absolute bottom-0 right-4 text-violet-500"
+          className="absolute bottom-0 right-4 text-[#fda085]"
           type="button"
           onClick={() => setExpand((prev) => !prev)}
         >
@@ -55,9 +57,12 @@ const Hotel = ({ hotel }: Props) => {
       </section>
 
       <Collapse in={expand} timeout="auto" unmountOnExit>
-        {roomsData?.rooms.map((room) => (
-          <Room key={room.id} room={room} />
-        ))}
+        {roomsData?.rooms.map((room) =>
+          room.occupancy.maxAdults >= adultsQuantity &&
+          room.occupancy.maxChildren >= childrenQuantity ? (
+            <Room key={room.id} room={room} />
+          ) : null,
+        )}
       </Collapse>
     </article>
   );

@@ -18,10 +18,10 @@ const Slider = ({ images }: Props) => {
     setPage((prev) => prev + newDirection);
 
   return (
-    <div className="relative overflow-hidden m-4">
+    <div className="relative overflow-hidden m-4 self-center">
       <AnimatePresence initial={false}>
         <motion.img
-          className="sm:h-56 sm:w-72 max-h-80 rounded-lg object-cover shadow-2xl cursor-pointer"
+          className="md:h-56 md:w-72 max-h-80 rounded-lg object-cover shadow-2xl cursor-pointer"
           key={page}
           src={images[imageIndex].url}
           initial={{ opacity: 0 }}
@@ -39,14 +39,14 @@ const Slider = ({ images }: Props) => {
         />
       </AnimatePresence>
       <motion.button
-        className="right-1 top-1/2 -translate-y-1/2 slider-nav-btn"
+        className="right-1 top-1/2 -translate-y-1/2 slider-nav-btn btn-color"
         onClick={() => paginate(1)}
       >
         <FontAwesomeIcon icon={faAngleRight} size="2x" />
       </motion.button>
 
       <motion.button
-        className=" left-1 top-1/2 -translate-y-1/2 slider-nav-btn"
+        className=" left-1 top-1/2 -translate-y-1/2 slider-nav-btn btn-color"
         onClick={() => paginate(-1)}
       >
         <FontAwesomeIcon icon={faAngleLeft} size="2x" />
