@@ -3,7 +3,7 @@
 ### [https://stiwsquer.github.io/guestline/](https://stiwsquer.github.io/guestline/)
 
 
-# Run localy: 
+# Run locally: 
 
 1. Clone this repo
 2. Run this line in the project directory:
