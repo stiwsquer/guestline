@@ -13,6 +13,7 @@ const Iterator = ({ label, value, setValue }: Props) => (
       {label}
     </h3>
     <button
+      aria-label="Minus button"
       data-testid="iterator-sub-btn"
       className="btn-color mx-2 text-2xl "
       type="button"
@@ -24,6 +25,7 @@ const Iterator = ({ label, value, setValue }: Props) => (
       {value}
     </span>
     <button
+      aria-label="Plus button"
       data-testid="iterator-add-btn"
       className=" btn-color mx-2 text-2xl"
       type="button"

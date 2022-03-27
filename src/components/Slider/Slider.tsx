@@ -42,6 +42,7 @@ const Slider = ({ images }: Props) => {
         />
       </AnimatePresence>
       <motion.button
+        aria-label="Next button"
         data-testid="slider-bth-next"
         className="right-2 top-1/2 -translate-y-1/2 slider-nav-btn btn-color"
         onClick={() => paginate(1)}
@@ -54,6 +55,7 @@ const Slider = ({ images }: Props) => {
       </motion.button>
 
       <motion.button
+        aria-label="Previous button"
         data-testid="slider-bth-prev"
         className=" left-2 top-1/2 -translate-y-1/2 slider-nav-btn btn-color"
         onClick={() => paginate(-1)}

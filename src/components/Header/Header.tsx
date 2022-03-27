@@ -42,6 +42,7 @@ const Header = ({
       </div>
       <div className="flex flex-col sm:flex-row h-40 sm:h-fit  justify-between p-4 border-2 border-gray-500 shadow-2xl rounded-2xl absolute left-1/2 -bottom-8 -translate-x-1/2 bg-white">
         <Rating
+          aria-label="hotel rating"
           data-testid="header-rating"
           onChange={(_, newValue) => setRating(newValue ?? 0)}
           className="mx-2 self-center"
