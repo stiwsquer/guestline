@@ -12,7 +12,7 @@ const queryHotels = async () => {
   return res.data.map((hotel) => mapApiResponseToDTO(hotel));
 };
 
-const useGetHotels = () => {
+export const useGetHotels = () => {
   const { data, isFetching, error } = useQuery(GET_HOTELS_QUERY, queryHotels, {
     refetchOnMount: false,
     refetchOnReconnect: false,
@@ -25,5 +25,3 @@ const useGetHotels = () => {
     error,
   };
 };
-
-export default useGetHotels;

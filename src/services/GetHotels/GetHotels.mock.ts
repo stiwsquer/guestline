@@ -21,6 +21,14 @@ export const mockHotelsApiResponse: GetHotelApiResponse[] = [
         url: 'https://rl-uk2.azureedge.net/picturemanager/images/OBMNG2/hotel1.jpg',
         alt: 'Hotel image',
       },
+      {
+        url: 'https://rl-uk2.azureedge.net/picturemanager/images/OBMNG3/hotel2.jpg',
+        alt: 'hotel',
+      },
+      {
+        url: 'https://rl-uk2.azureedge.net/picturemanager/images/OBMNG3/hotel3.jpg',
+        alt: 'hotel',
+      },
     ],
     checkInHours: '13',
     checkInMinutes: '00',
@@ -49,7 +57,7 @@ export const mockHotelsApiResponse: GetHotelApiResponse[] = [
     email: 'jabbaservices@guestline.com',
     images: [
       {
-        url: 'https://rl-uk2.azureedge.net/picturemanager/images/OBMNG3/hotel2.jpg',
+        url: 'https://rl-uk2.azureedge.net/picturemanager/images/OBMNG3/hotel4.jpg',
         alt: 'hotel',
       },
     ],
@@ -77,6 +85,14 @@ export const mockHotelsDTO: HotelDTO[] = [
         url: 'https://rl-uk2.azureedge.net/picturemanager/images/OBMNG2/hotel1.jpg',
         alt: 'Hotel image',
       },
+      {
+        url: 'https://rl-uk2.azureedge.net/picturemanager/images/OBMNG3/hotel2.jpg',
+        alt: 'hotel',
+      },
+      {
+        url: 'https://rl-uk2.azureedge.net/picturemanager/images/OBMNG3/hotel3.jpg',
+        alt: 'hotel',
+      },
     ],
   },
   {
@@ -87,7 +103,7 @@ export const mockHotelsDTO: HotelDTO[] = [
     starRating: '3',
     images: [
       {
-        url: 'https://rl-uk2.azureedge.net/picturemanager/images/OBMNG3/hotel2.jpg',
+        url: 'https://rl-uk2.azureedge.net/picturemanager/images/OBMNG3/hotel4.jpg',
         alt: 'hotel',
       },
     ],

@@ -27,7 +27,7 @@ export interface Position {
 }
 export interface Image {
   url: string;
-  alt: string;
+  alt?: string;
 }
 
 export interface HotelDTO {

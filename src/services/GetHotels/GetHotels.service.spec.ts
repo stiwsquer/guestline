@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { renderHook } from '@testing-library/react-hooks';
-import useGetHotels from './GetHotels.service';
+import { useGetHotels } from './GetHotels.service';
 import { mockHotelsApiResponse, mockHotelsDTO } from './GetHotels.mock';
 import TestWrapper from '../../helpers/TestWrapper';
 

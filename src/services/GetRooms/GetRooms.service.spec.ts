@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { renderHook } from '@testing-library/react-hooks';
 import TestWrapper from '../../helpers/TestWrapper';
-import useGetRooms from './GetRooms.service';
+import { useGetRooms } from './GetRooms.service';
 import mockRoomsApiResponse from './GetRooms.mock';
 
 jest.mock('axios', () => ({

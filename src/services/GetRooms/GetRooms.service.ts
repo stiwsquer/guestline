@@ -13,7 +13,7 @@ const queryRooms = async (roomId: string) => {
   return res.data;
 };
 
-const useGetRooms = (roomId: string) => {
+export const useGetRooms = (roomId: string) => {
   const { data, isFetching, error } = useQuery(
     [GET_ROOMS_QUERY, roomId],
     () => queryRooms(roomId),
@@ -31,5 +31,3 @@ const useGetRooms = (roomId: string) => {
     error,
   };
 };
-
-export default useGetRooms;

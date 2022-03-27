@@ -1,4 +1,6 @@
-const mockRoomsApiResponse = {
+import { GetRoomsApiResponse } from './GetRooms.types';
+
+const mockRoomsApiResponse: GetRoomsApiResponse = {
   rooms: [
     {
       id: 'DTFF',
@@ -205,6 +207,28 @@ const mockRoomsApiResponse = {
           name: 'Telephone',
         },
       ],
+    },
+  ],
+  ratePlans: [
+    {
+      id: '24_HOUR',
+      shortDescription: '24 Hour Rate - Payment Type Pay Now',
+      longDescription:
+        'Code: 24_HOUR, Prepayment: Pay now\r\nSome other long added description added recently\r\n\r\nTesting bullet points\r\n1\r\n2\r\n3',
+      prePayment: 'Reserve',
+      cancellationPolicy: {
+        name: 'Free Cancelation',
+        text: 'You can cancel when ever you like.',
+        penalty: 'Fixed',
+        applicable: 'Full Stay',
+        amount: 0,
+        hour: '10 AM',
+      },
+    },
+    {
+      id: 'BAR_BB10',
+      shortDescription: '-10% off',
+      prePayment: 'First night',
     },
   ],
 };

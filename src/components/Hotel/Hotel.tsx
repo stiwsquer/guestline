@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Rating from '@mui/material/Rating';
 import Collapse from '@mui/material/Collapse';
 import { HotelDTO } from '../../services/GetHotels/GetHotels.types';
-import useGetRooms from '../../services/GetRooms/GetRooms.service';
+import { useGetRooms } from '../../services/GetRooms/GetRooms.service';
 import Slider from '../Slider/Slider';
 import Room from '../Room/Room';
 
@@ -18,10 +18,14 @@ const Hotel = ({ hotel, adultsQuantity, childrenQuantity }: Props) => {
   const [expand, setExpand] = useState(true);
 
   if (error) return null;
-  if (isFetching) return <h1>Fetching rooms...</h1>;
+  if (isFetching)
+    return <h1 data-testid="fetching-rooms-text">Fetching rooms...</h1>;
 
   return (
-    <article className="w-full my-6 flex flex-col shadow-2xl rounded-lg">
+    <article
+      data-testid="hotel"
+      className="w-full my-6 flex flex-col shadow-2xl rounded-lg"
+    >
       <section className="flex md:flex-row w-full flex-col-reverse justify-center relative md:pb-0 pb-6">
         <Slider images={hotel.images} />
         <div className="flex flex-row justify-between flex-1 ">
@@ -40,11 +44,13 @@ const Hotel = ({ hotel, adultsQuantity, childrenQuantity }: Props) => {
           />
         </div>
         <button
+          data-testid="expand-rooms-btn"
           className="absolute bottom-0 right-4 text-[#fda085]"
           type="button"
           onClick={() => setExpand((prev) => !prev)}
         >
           <FontAwesomeIcon
+            data-testid="expand-rooms-icon"
             className={
               expand
                 ? 'rotate-180 transition-transform'
