@@ -1,6 +1,6 @@
 {
   "short_name": "Hotels page",
-  "name": "Web site containing hotels their rooms and ability to filter them",
+  "name": "Web site containing hotels, their rooms and ability to filter them",
   "icons": [
     {
       "src": "favicon.ico",
