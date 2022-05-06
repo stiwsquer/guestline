@@ -2,17 +2,48 @@ version: 2.1
 
 workflows:
   # workflow name (can be anything)
-  test-deploy:
+  deploy:
     # jobs to be executed in this workflow
     jobs:
+      - checkout_code
+      - install
       - test
 
-jobs:
-  # job called "test" (can be anything)
-  test:
-    # execution environment "docker"
+references:
+  node_defaults: &node_defaults # working_directory: ~/repo
     docker:
+      # execution environment "docker"
       - image: cimg/node:18.0.0
+    resource_class: small
+
+jobs:
+  # job called "checkout_code" (can be anything)
+  checkout_code:
+    <<: *node_defaults
     steps:
       - checkout
-      - run: node --version
+  install:
+    <<: *node_defaults
+    steps:
+      - run:
+          name: Install dependencies
+          command: npm install
+  unit_tests:
+    <<: *node_defaults
+    steps:
+      - run:
+          name: Run Tests
+          command: npm test
+
+  # test:
+  #   # execution environment "docker"
+  #   docker:
+  #     - image: cimg/node:18.0.0
+  #   steps:
+  #     - checkout
+  #     - run:
+  #         name: Install dependencies
+  #         command: npm install
+  #     - run:
+  #         name: Run Tests
+  #         command: npm test
