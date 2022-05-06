@@ -5,55 +5,56 @@ workflows:
   deploy:
     # jobs to be executed in this workflow
     jobs:
-      - checkout_code
-      - install:
-          requires:
-            - checkout_code
-      - unit_tests:
-          requires:
-            - install
+      - test
+      # - checkout_code
+      # - install:
+      #     requires:
+      #       - checkout_code
+      # - unit_tests:
+      #     requires:
+      #       - install
 
-references:
-  node_defaults: &node_defaults # working_directory: ~/guestline
-    docker:
-      # execution environment "docker"
-      - image: cimg/node:18.0.0
-    resource_class: small
+# references:
+#   node_defaults: &node_defaults # working_directory: ~/guestline
+#     docker:
+#       # execution environment "docker"
+#       - image: cimg/node:18.0.0
+#     resource_class: small
 
 jobs:
-  # job called "checkout_code" (can be anything)
-  checkout_code:
-    <<: *node_defaults
+  #   # job called "checkout_code" (can be anything)
+  #   checkout_code:
+  #     <<: *node_defaults
+  #     steps:
+  #       - attach_workspace:
+  #           at: ~/guestline
+  #       - checkout
+  #   install:
+  #     <<: *node_defaults
+  #     steps:
+  #       - attach_workspace:
+  #           at: ~/guestline
+  #       - run:
+  #           name: Install dependencies
+  #           command: npm install
+  #   unit_tests:
+  #     <<: *node_defaults
+  #     steps:
+  #       - attach_workspace:
+  #           at: ~/guestline
+  #       - run:
+  #           name: Run Tests
+  #           command: npm test
+
+  test:
+    # execution environment "docker"
+    docker:
+      - image: cimg/node:18.0.0
     steps:
-      - attach_workspace:
-          at: ~/guestline
       - checkout
-  install:
-    <<: *node_defaults
-    steps:
-      - attach_workspace:
-          at: ~/guestline
       - run:
           name: Install dependencies
           command: npm install
-  unit_tests:
-    <<: *node_defaults
-    steps:
-      - attach_workspace:
-          at: ~/guestline
       - run:
           name: Run Tests
           command: npm test
-
-  # test:
-  #   # execution environment "docker"
-  #   docker:
-  #     - image: cimg/node:18.0.0
-  #   steps:
-  #     - checkout
-  #     - run:
-  #         name: Install dependencies
-  #         command: npm install
-  #     - run:
-  #         name: Run Tests
-  #         command: npm test
