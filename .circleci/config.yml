@@ -6,8 +6,12 @@ workflows:
     # jobs to be executed in this workflow
     jobs:
       - checkout_code
-      - install
-      - unit_tests
+      - install:
+          requires:
+            - checkout_code
+      - unit_tests:
+          requires:
+            - install
 
 references:
   node_defaults: &node_defaults
