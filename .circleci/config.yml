@@ -25,16 +25,22 @@ jobs:
   checkout_code:
     <<: *node_defaults
     steps:
+    - attach_workspace:
+          at: ~/guestline
       - checkout
   install:
     <<: *node_defaults
     steps:
+    - attach_workspace:
+          at: ~/guestline
       - run:
           name: Install dependencies
           command: npm install
   unit_tests:
     <<: *node_defaults
     steps:
+    - attach_workspace:
+          at: ~/guestline
       - run:
           name: Run Tests
           command: npm test
