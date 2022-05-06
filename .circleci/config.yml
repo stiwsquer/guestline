@@ -1,0 +1,18 @@
+version: 2.1
+
+workflows:
+  # workflow name (can be anything)
+  test-deploy:
+    # jobs to be executed in this workflow
+    jobs:
+      - test
+
+jobs:
+  # job called "test" (can be anything)
+  test:
+    # execution environment "docker"
+    docker:
+      - image: cimg/node:18.0.0
+    steps:
+      - checkout
+      - run: node --version

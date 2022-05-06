@@ -69,6 +69,13 @@ const Hotel = ({ hotel, adultsQuantity, childrenQuantity }: Props) => {
             <Room key={room.id} room={room} />
           ) : null,
         )}
+        {roomsData?.rooms.filter(
+          (room) =>
+            room.occupancy.maxAdults >= adultsQuantity &&
+            room.occupancy.maxChildren >= childrenQuantity,
+        ).length ? null : (
+          <h1>Rooms are unavailable</h1>
+        )}
       </Collapse>
     </article>
   );

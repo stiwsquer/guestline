@@ -30,7 +30,10 @@ const Header = ({
 
   return (
     <div className="w-fit h-56 bg-orange-200 mb-12 relative m-auto">
-      <div data-testid="header-images" className=" h-full flex">
+      <div
+        data-testid="header-images"
+        className="h-full flex w-full overflow-hidden"
+      >
         {images.map((image) => (
           <img
             key={image.url}
@@ -50,8 +53,13 @@ const Header = ({
           value={rating}
           size="large"
         />
-        <Iterator label="Adults:" value={adults} setValue={setAdults} />
-        <Iterator label="Children:" value={children} setValue={setChildren} />
+        <Iterator label="Adults:" value={adults} setValue={setAdults} max={6} />
+        <Iterator
+          label="Children:"
+          value={children}
+          setValue={setChildren}
+          max={4}
+        />
       </div>
     </div>
   );

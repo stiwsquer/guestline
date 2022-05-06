@@ -1,10 +1,11 @@
 type Props = {
   label: string;
   value: number;
+  max: number;
   setValue: React.Dispatch<React.SetStateAction<number>>;
 };
 
-const Iterator = ({ label, value, setValue }: Props) => (
+const Iterator = ({ label, value, setValue, max }: Props) => (
   <div
     data-testid="iterator"
     className="flex h-fit text-center content-center self-center mx-2  text-xl"
@@ -29,7 +30,7 @@ const Iterator = ({ label, value, setValue }: Props) => (
       data-testid="iterator-add-btn"
       className=" btn-color mx-2 text-2xl"
       type="button"
-      onClick={() => setValue((prev) => prev + 1)}
+      onClick={() => setValue((prev) => (prev < max ? prev + 1 : prev))}
     >
       +
     </button>
