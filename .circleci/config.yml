@@ -25,13 +25,13 @@ jobs:
   checkout_code:
     <<: *node_defaults
     steps:
-    - attach_workspace:
+      - attach_workspace:
           at: ~/guestline
       - checkout
   install:
     <<: *node_defaults
     steps:
-    - attach_workspace:
+      - attach_workspace:
           at: ~/guestline
       - run:
           name: Install dependencies
@@ -39,7 +39,7 @@ jobs:
   unit_tests:
     <<: *node_defaults
     steps:
-    - attach_workspace:
+      - attach_workspace:
           at: ~/guestline
       - run:
           name: Run Tests
