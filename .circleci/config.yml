@@ -14,8 +14,7 @@ workflows:
             - install
 
 references:
-  node_defaults: &node_defaults
-    working_directory: ~/guestline
+  node_defaults: &node_defaults # working_directory: ~/guestline
     docker:
       # execution environment "docker"
       - image: cimg/node:18.0.0
