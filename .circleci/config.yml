@@ -10,7 +10,8 @@ workflows:
       - unit_tests
 
 references:
-  node_defaults: &node_defaults # working_directory: ~/repo
+  node_defaults: &node_defaults
+    working_directory: ~/repo
     docker:
       # execution environment "docker"
       - image: cimg/node:18.0.0
